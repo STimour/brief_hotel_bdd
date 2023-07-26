@@ -9,22 +9,15 @@ CREATE TYPE "periode_annee" AS ENUM (
   'basse_saison'
 );
 
-CREATE TABLE "societe" (
-  "id_societe" int PRIMARY KEY,
-  "id_enseigne" int,
-  "nom_societe" varchar
-);
-
 CREATE TABLE "enseigne" (
   "id_enseigne" int PRIMARY KEY,
-  "id_societe" int,
   "id_hotel" int,
+  "nom_societe" varchar,
   "nom_enseigne" varchar
 );
 
 CREATE TABLE "hotel" (
   "id_hotel" int PRIMARY KEY,
-  "id_enseigne" int,
   "id_chambre" int,
   "nb_chambre" int NOT NULL,
   "nb_chambre_disponible" int,
@@ -37,15 +30,16 @@ CREATE TABLE "hotel" (
 
 CREATE TABLE "chambre" (
   "id_chambre" int PRIMARY KEY,
-  "id_hotel" int,
   "id_prix" int,
+  "numero_chambre" int,
   "type_chambre" niveau_comfort,
-  "nb_lit" int
+  "nb_lit" int,
+  "date_arrive" date,
+  "date_depart" date
 );
 
 CREATE TABLE "prix" (
   "id_prix" int PRIMARY KEY,
-  "id_chambre" int,
   "saison" periode_annee,
   "prix" money
 );
@@ -72,7 +66,6 @@ CREATE TABLE "facture" (
 
 CREATE TABLE "client" (
   "id_client" int PRIMARY KEY,
-  "id_reservation" int,
   "id_facture" int,
   "id_client_pro" int,
   "nom_societe" varchar,
@@ -83,42 +76,23 @@ CREATE TABLE "client" (
   "numero_cb" varchar
 );
 
-ALTER TABLE "enseigne" ADD FOREIGN KEY ("id_enseigne") REFERENCES "societe" ("id_enseigne");
-
-ALTER TABLE "enseigne" ADD FOREIGN KEY ("id_societe") REFERENCES "societe" ("id_societe");
-
 ALTER TABLE "hotel" ADD FOREIGN KEY ("id_hotel") REFERENCES "enseigne" ("id_hotel");
-
-ALTER TABLE "hotel" ADD FOREIGN KEY ("id_enseigne") REFERENCES "enseigne" ("id_enseigne");
 
 ALTER TABLE "chambre" ADD FOREIGN KEY ("id_chambre") REFERENCES "hotel" ("id_chambre");
 
-ALTER TABLE "chambre" ADD FOREIGN KEY ("id_hotel") REFERENCES "hotel" ("id_hotel");
-
 ALTER TABLE "prix" ADD FOREIGN KEY ("id_prix") REFERENCES "chambre" ("id_prix");
 
-ALTER TABLE "prix" ADD FOREIGN KEY ("id_chambre") REFERENCES "chambre" ("id_chambre");
+ALTER TABLE "chambre" ADD FOREIGN KEY ("id_chambre") REFERENCES "reservation" ("id_chambre");
 
 CREATE TABLE "client_reservation" (
-  "client_id_client" int,
-  "reservation_id_chambre" int,
-  PRIMARY KEY ("client_id_client", "reservation_id_chambre")
-);
-
-ALTER TABLE "client_reservation" ADD FOREIGN KEY ("client_id_client") REFERENCES "client" ("id_client");
-
-ALTER TABLE "client_reservation" ADD FOREIGN KEY ("reservation_id_chambre") REFERENCES "reservation" ("id_chambre");
-
-
-CREATE TABLE "client_reservation(1)" (
   "client_id_client" int,
   "reservation_id_client" int,
   PRIMARY KEY ("client_id_client", "reservation_id_client")
 );
 
-ALTER TABLE "client_reservation(1)" ADD FOREIGN KEY ("client_id_client") REFERENCES "client" ("id_client");
+ALTER TABLE "client_reservation" ADD FOREIGN KEY ("client_id_client") REFERENCES "client" ("id_client");
 
-ALTER TABLE "client_reservation(1)" ADD FOREIGN KEY ("reservation_id_client") REFERENCES "reservation" ("id_client");
+ALTER TABLE "client_reservation" ADD FOREIGN KEY ("reservation_id_client") REFERENCES "reservation" ("id_client");
 
 
 CREATE TABLE "option_reservation" (
@@ -135,7 +109,5 @@ ALTER TABLE "option_reservation" ADD FOREIGN KEY ("reservation_id_option") REFER
 ALTER TABLE "reservation" ADD FOREIGN KEY ("id_prix") REFERENCES "prix" ("id_prix");
 
 ALTER TABLE "reservation" ADD FOREIGN KEY ("id_reservation") REFERENCES "facture" ("id_reservation");
-
-ALTER TABLE "reservation" ADD FOREIGN KEY ("id_reservation") REFERENCES "client" ("id_reservation");
 
 ALTER TABLE "facture" ADD FOREIGN KEY ("id_facture") REFERENCES "client" ("id_facture");

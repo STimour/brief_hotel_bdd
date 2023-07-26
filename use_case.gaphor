@@ -2925,14 +2925,15 @@ existing classes or even new classes with specific responsibilities.</val>
 <ref refid="a0ce5b28-2709-11ee-bc01-015f2b7d5f14"/>
 <ref refid="cf33a95b-2709-11ee-be0a-015f2b7d5f14"/>
 <ref refid="7a814fa2-26f8-11ee-b8da-015f2b7d5f14"/>
-<ref refid="7fce4f19-26f8-11ee-bd16-015f2b7d5f14"/>
 <ref refid="ffe97591-26fb-11ee-a423-015f2b7d5f14"/>
-<ref refid="218cec65-26fc-11ee-b682-015f2b7d5f14"/>
 <ref refid="44304122-26fc-11ee-a4be-015f2b7d5f14"/>
 <ref refid="17b94945-26fd-11ee-aef8-015f2b7d5f14"/>
 <ref refid="3345c5b8-2700-11ee-9c64-015f2b7d5f14"/>
 <ref refid="3dc57456-2700-11ee-9178-015f2b7d5f14"/>
 <ref refid="4d678693-2700-11ee-a39c-015f2b7d5f14"/>
+<ref refid="a17960bb-2bc0-11ee-84cb-fdf1350ade1b"/>
+<ref refid="b7d591f8-2bc0-11ee-97e4-fdf1350ade1b"/>
+<ref refid="20dba333-2bc1-11ee-8462-fdf1350ade1b"/>
 </reflist>
 </ownedPresentation>
 </Diagram>
@@ -3049,23 +3050,6 @@ existing classes or even new classes with specific responsibilities.</val>
 <val>[(0.0, 0.0), (204.6426010131836, 0.0)]</val>
 </points>
 </ObjectFlowItem>
-<ObjectFlowItem id="7fce4f19-26f8-11ee-bd16-015f2b7d5f14">
-<diagram>
-<ref refid="34032a36-26f7-11ee-be1e-015f2b7d5f14"/>
-</diagram>
-<horizontal>
-<val>0</val>
-</horizontal>
-<orthogonal>
-<val>0</val>
-</orthogonal>
-<matrix>
-<val>(1.0, 0.0, 0.0, 1.0, 126.5341567993164, 318.9518737792969)</val>
-</matrix>
-<points>
-<val>[(1.1489410400390625, -87.55074310302734), (204.3244857788086, -87.55074310302734)]</val>
-</points>
-</ObjectFlowItem>
 <Comment id="e8ea2aa5-26f9-11ee-8ba5-015f2b7d5f14">
 <body>
 <val>Vérifier la disponibilité de la chambr e</val>
@@ -3161,7 +3145,7 @@ existing classes or even new classes with specific responsibilities.</val>
 <val>0</val>
 </orthogonal>
 <matrix>
-<val>(1.0, 0.0, 0.0, 1.0, 328.16845703125, 258.12474060058594)</val>
+<val>(1.0, 0.0, 0.0, 1.0, 332.361328125, 146.64376068115234)</val>
 </matrix>
 <points>
 <val>[(2.690185546875, -0.5660781860351562), (365.99114990234375, -0.5660781860351562)]</val>
@@ -3179,7 +3163,7 @@ existing classes or even new classes with specific responsibilities.</val>
 </Comment>
 <CommentItem id="07a1e732-26fc-11ee-b2f7-015f2b7d5f14">
 <matrix>
-<val>(1.0, 0.0, 0.0, 1.0, 419.4921875, 206.40113067626953)</val>
+<val>(1.0, 0.0, 0.0, 1.0, 419.4921875, 146.0776824951172)</val>
 </matrix>
 <top-left>
 <val>(0.0, 0.0)</val>
@@ -3197,26 +3181,9 @@ existing classes or even new classes with specific responsibilities.</val>
 <ref refid="07a1a72f-26fc-11ee-bba7-015f2b7d5f14"/>
 </subject>
 </CommentItem>
-<ControlFlowItem id="218cec65-26fc-11ee-b682-015f2b7d5f14">
-<diagram>
-<ref refid="34032a36-26f7-11ee-be1e-015f2b7d5f14"/>
-</diagram>
-<horizontal>
-<val>0</val>
-</horizontal>
-<orthogonal>
-<val>0</val>
-</orthogonal>
-<matrix>
-<val>(1.0, 0.0, 0.0, 1.0, 691.0763549804688, 343.6783752441406)</val>
-</matrix>
-<points>
-<val>[(3.083251953125, 34.865142822265625), (-360.21771240234375, 34.865142822265625)]</val>
-</points>
-</ControlFlowItem>
 <Comment id="2b498b56-26fc-11ee-9919-015f2b7d5f14">
 <body>
-<val>renvoie de la réponse à afficher</val>
+<val>réponse : Oui ou Non</val>
 </body>
 <presentation>
 <reflist>
@@ -3226,7 +3193,7 @@ existing classes or even new classes with specific responsibilities.</val>
 </Comment>
 <CommentItem id="2b49aad8-26fc-11ee-b6b5-015f2b7d5f14">
 <matrix>
-<val>(1.0, 0.0, 0.0, 1.0, 419.4921875, 328.54351806640625)</val>
+<val>(1.0, 0.0, 0.0, 1.0, 432.33935546875, 323.04351806640625)</val>
 </matrix>
 <top-left>
 <val>(-40.583984375, 0.0)</val>
@@ -3365,6 +3332,7 @@ existing classes or even new classes with specific responsibilities.</val>
 <ref refid="25110bb3-26ff-11ee-bf49-015f2b7d5f14"/>
 <ref refid="5802919c-270c-11ee-a4fb-015f2b7d5f14"/>
 <ref refid="32b8645b-270d-11ee-bc69-015f2b7d5f14"/>
+<ref refid="e163b30b-2bc4-11ee-954a-436c859df943"/>
 </reflist>
 </ownedPresentation>
 </Diagram>
@@ -3545,7 +3513,7 @@ existing classes or even new classes with specific responsibilities.</val>
 <val>(1.0, 0.0, 0.0, 1.0, 705.4524536132812, 408.8000183105469)</val>
 </matrix>
 <points>
-<val>[(1.883056640625, -9.211639404296875), (-339.13848876953125, -9.211639404296875)]</val>
+<val>[(-317.30364990234375, -9.211639404296875), (-339.13848876953125, -9.211639404296875)]</val>
 </points>
 </ObjectFlowItem>
 <ObjectFlowItem id="3345c5b8-2700-11ee-9c64-015f2b7d5f14">
@@ -3559,10 +3527,10 @@ existing classes or even new classes with specific responsibilities.</val>
 <val>0</val>
 </orthogonal>
 <matrix>
-<val>(1.0, 0.0, 0.0, 1.0, 694.1994018554688, 593.2081298828125)</val>
+<val>(1.0, 0.0, 0.0, 1.0, 694.1596069335938, 593.2081298828125)</val>
 </matrix>
 <points>
-<val>[(0.0, 0.0), (-359.14788818359375, 0.0)]</val>
+<val>[(-335.9187927246094, 0.0), (-359.14788818359375, 0.0)]</val>
 </points>
 </ObjectFlowItem>
 <ObjectFlowItem id="3dc57456-2700-11ee-9178-015f2b7d5f14">
@@ -3641,7 +3609,7 @@ existing classes or even new classes with specific responsibilities.</val>
 </Comment>
 <CommentItem id="a0ce5b28-2709-11ee-bc01-015f2b7d5f14">
 <matrix>
-<val>(1.0, 0.0, 0.0, 1.0, 463.97662353515625, 532.2081298828125)</val>
+<val>(1.0, 0.0, 0.0, 1.0, 481.04345703125, 525.960205078125)</val>
 </matrix>
 <top-left>
 <val>(-71.44146728515625, 0.0)</val>
@@ -3751,7 +3719,7 @@ existing classes or even new classes with specific responsibilities.</val>
 </CommentItem>
 <Comment id="4902cbd4-270c-11ee-ac5f-015f2b7d5f14">
 <body>
-<val>renvoie les informations avec les prix liés</val>
+<val>réponse : Oui ou Non</val>
 </body>
 <presentation>
 <reflist>
@@ -3873,4 +3841,81 @@ existing classes or even new classes with specific responsibilities.</val>
 <ref refid="44bf7885-270d-11ee-84fb-015f2b7d5f14"/>
 </subject>
 </CommentItem>
+<ControlFlowItem id="a17960bb-2bc0-11ee-84cb-fdf1350ade1b">
+<diagram>
+<ref refid="34032a36-26f7-11ee-be1e-015f2b7d5f14"/>
+</diagram>
+<horizontal>
+<val>0</val>
+</horizontal>
+<orthogonal>
+<val>0</val>
+</orthogonal>
+<matrix>
+<val>(1.0, 0.0, 0.0, 1.0, 695.9134521484375, 380.2978219369636)</val>
+</matrix>
+<points>
+<val>[(-337.6726379394531, -1.7543038705573508), (-365.0548095703125, -1.7543038705573508)]</val>
+</points>
+</ControlFlowItem>
+<CommentLineItem id="b7d591f8-2bc0-11ee-97e4-fdf1350ade1b">
+<diagram>
+<ref refid="34032a36-26f7-11ee-be1e-015f2b7d5f14"/>
+</diagram>
+<horizontal>
+<val>0</val>
+</horizontal>
+<orthogonal>
+<val>0</val>
+</orthogonal>
+<matrix>
+<val>(1.0, 0.0, 0.0, 1.0, 692.6098022460938, 379.9850777963386)</val>
+</matrix>
+<points>
+<val>[(1.5498046875, 0.0), (-334.3689880371094, 0.0)]</val>
+</points>
+<head-connection>
+<ref refid="e62c5559-26fb-11ee-aa3f-015f2b7d5f14"/>
+</head-connection>
+</CommentLineItem>
+<CommentLineItem id="20dba333-2bc1-11ee-8462-fdf1350ade1b">
+<diagram>
+<ref refid="34032a36-26f7-11ee-be1e-015f2b7d5f14"/>
+</diagram>
+<horizontal>
+<val>0</val>
+</horizontal>
+<orthogonal>
+<val>0</val>
+</orthogonal>
+<matrix>
+<val>(1.0, 0.0, 0.0, 1.0, 693.9881591796875, 596.8312090594741)</val>
+</matrix>
+<points>
+<val>[(0.17144775390625, -3.6230791766615766), (-335.7473449707031, -3.6230791766615766)]</val>
+</points>
+<head-connection>
+<ref refid="e62c5559-26fb-11ee-aa3f-015f2b7d5f14"/>
+</head-connection>
+</CommentLineItem>
+<CommentLineItem id="e163b30b-2bc4-11ee-954a-436c859df943">
+<diagram>
+<ref refid="dc4fdf86-26fd-11ee-82db-015f2b7d5f14"/>
+</diagram>
+<horizontal>
+<val>0</val>
+</horizontal>
+<orthogonal>
+<val>0</val>
+</orthogonal>
+<matrix>
+<val>(1.0, 0.0, 0.0, 1.0, 707.4700317382812, 398.51678663525826)</val>
+</matrix>
+<points>
+<val>[(-319.32122802734375, 1.0715922709917436), (-0.134521484375, 1.0715922709917436)]</val>
+</points>
+<head-connection>
+<ref refid="25110bb3-26ff-11ee-bf49-015f2b7d5f14"/>
+</head-connection>
+</CommentLineItem>
 </gaphor>
