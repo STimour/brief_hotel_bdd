@@ -1,3 +1,9 @@
+CREATE TYPE "niveau_comfort" AS ENUM (
+  'normal',
+  'business',
+  'luxe'
+);
+
 CREATE TYPE "periode_annee" AS ENUM (
   'haute_saison',
   'basse_saison'
@@ -9,48 +15,48 @@ CREATE TYPE "sexe" AS ENUM (
 );
 
 CREATE TABLE "enseigne" (
-  "id_enseigne" int PRIMARY KEY,
-  "id_hotel" int NOT NULL ,
-  "nom_societe" varchar NOT NULL,
-  "nom_enseigne" varchar NOT NULL
+  "id_enseigne" int PRIMARY KEY NOT NULL,
+  "id_hotel" int,
+  "nom_societe" varchar,
+  "nom_enseigne" varchar
 );
 
 CREATE TABLE "hotel" (
-  "id_hotel" int PRIMARY KEY NOT NULL,
+  "id_hotel" int UNIQUE NOT NULL,
   "id_chambre" int,
   "nb_chambre" int NOT NULL,
   "nb_chambre_disponible" int,
-  "pays" varchar NOT NULL,
-  "ville" varchar NOT NULL,
-  "code_postal" varchar NOT NULL,
-  "numero_rue" varchar NOT NULL,
-  "nom_rue" varchar NOT NULL
+  "pays" varchar,
+  "ville" varchar,
+  "code_postal" varchar,
+  "numero_rue" varchar,
+  "nom_rue" varchar
 );
 
 CREATE TABLE "chambre" (
-  "id_chambre" int PRIMARY KEY NOT NULL,
+  "id_chambre" int UNIQUE NOT NULL,
   "id_prix" int,
-  "numero_chambre" int NOT NULL,
+  "numero_chambre" int,
   "type_chambre" niveau_comfort,
-  "nb_lit" int NOT NULL,
-  "date_arrive" date NOT NULL,
-  "date_depart" date NOT NULL
+  "nb_lit" int,
+  "date_arrive" date,
+  "date_depart" date
 );
 
 CREATE TABLE "prix" (
-  "id_prix" int PRIMARY KEY NOT NULL,
-  "saison" periode_annee NOT NULL,
-  "prix" money NOT NULL
+  "id_prix" int UNIQUE NOT NULL,
+  "saison" periode_annee,
+  "prix" money
 );
 
 CREATE TABLE "option" (
-  "id_option" int PRIMARY KEY NOT NULL,
-  "titre_option" varchar NOT NULL,
-  "prix" money NOT NULL
+  "id_option" int UNIQUE NOT NULL,
+  "titre_option" varchar,
+  "prix" money
 );
 
 CREATE TABLE "reservation" (
-  "id_reservation" int PRIMARY KEY NOT NULL,
+  "id_reservation" int UNIQUE NOT NULL,
   "id_chambre" int,
   "id_client" int,
   "id_option" int,
@@ -58,21 +64,21 @@ CREATE TABLE "reservation" (
 );
 
 CREATE TABLE "facture" (
-  "id_facture" int PRIMARY KEY NOT NULL,
+  "id_facture" int UNIQUE NOT NULL,
   "id_reservation" int,
-  "montant_total" int NOT NULL
+  "montant_total" int
 );
 
 CREATE TABLE "client" (
-  "id_client" int PRIMARY KEY NOT NULL,
+  "id_client" int UNIQUE NOT NULL,
   "id_facture" int,
   "id_client_pro" int,
   "nom_societe" varchar,
-  "nom" varchar NOT NULL,
-  "prenom" varchar NOT NULL,
-  "genre" sexe NOT NULL,
-  "tel" varchar NOT NULL,
-  "numero_cb" varchar NOT NULL
+  "nom" varchar,
+  "prenom" varchar,
+  "genre" sexe,
+  "tel" varchar,
+  "numero_cb" varchar
 );
 
 ALTER TABLE "hotel" ADD FOREIGN KEY ("id_hotel") REFERENCES "enseigne" ("id_hotel");
