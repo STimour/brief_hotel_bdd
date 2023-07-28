@@ -24,7 +24,6 @@ CREATE TABLE "enseigne" (
 CREATE TABLE "hotel" (
   "id_hotel" int PRIMARY KEY NOT NULL,
   "id_chambre" int,
-  "nom_hotel" varchar,
   "nb_chambre" int NOT NULL,
   "nb_chambre_disponible" int,
   "pays" varchar,
@@ -50,9 +49,9 @@ CREATE TABLE "prix" (
   "prix" money
 );
 
-CREATE TABLE "service" (
-  "id_service" int PRIMARY KEY NOT NULL,
-  "titre_service" varchar,
+CREATE TABLE "option" (
+  "id_option" int PRIMARY KEY NOT NULL,
+  "titre_option" varchar,
   "prix" money
 );
 
@@ -60,15 +59,13 @@ CREATE TABLE "reservation" (
   "id_reservation" int PRIMARY KEY NOT NULL,
   "id_chambre" int,
   "id_client" int,
-  "id_service" int,
+  "id_option" int,
   "id_prix" int
 );
 
 CREATE TABLE "facture" (
   "id_facture" int PRIMARY KEY NOT NULL,
   "id_reservation" int,
-  "id_hotel" int,
-  "date_facturation" date,
   "montant_total" int
 );
 
@@ -94,12 +91,10 @@ ALTER TABLE "reservation" ADD FOREIGN KEY ("id_chambre") REFERENCES "chambre" ("
 
 ALTER TABLE "reservation" ADD FOREIGN KEY ("id_client") REFERENCES "client" ("id_client");
 
-ALTER TABLE "reservation" ADD FOREIGN KEY ("id_service") REFERENCES "service" ("id_service");
+ALTER TABLE "reservation" ADD FOREIGN KEY ("id_option") REFERENCES "option" ("id_option");
 
 ALTER TABLE "reservation" ADD FOREIGN KEY ("id_prix") REFERENCES "prix" ("id_prix");
 
 ALTER TABLE "facture" ADD FOREIGN KEY ("id_reservation") REFERENCES "reservation" ("id_reservation");
 
 ALTER TABLE "client" ADD FOREIGN KEY ("id_facture") REFERENCES "facture" ("id_facture");
-
-ALTER TABLE "hotel" ADD FOREIGN KEY ("id_hotel") REFERENCES "facture" ("id_hotel");
